@@ -124,7 +124,7 @@ workflow GENERATE_COMPARISONS_BIGWIG {
             ]
 
             def meta_for_module = meta_csv + [ id: output_bigwig_name ]
-            [ meta_for_module, bigwig1, bigwig2, output_bigwig_name ]
+            [ meta_for_module, bigwig1, bigwig2 ]
 
         }
         .set { comparisons_merge_ch }

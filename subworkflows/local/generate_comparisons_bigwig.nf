@@ -8,9 +8,7 @@ workflow GENERATE_COMPARISONS_BIGWIG {
 
     take:
     ch_bigwig_input        // channel: [meta, bigwig]
-    //dovrei avere due bigwig come input, non capisco se qui è solo uno
     ch_samplesheet      // channel: samplesheet data for comparison string approach
-    // chromsize??
     main:
 
     ch_versions = Channel.empty()
@@ -74,9 +72,6 @@ workflow GENERATE_COMPARISONS_BIGWIG {
         comparisons_ch_s1 = comparisons_ch.comparisons_ch_s1
         comparisons_ch_s2 = comparisons_ch.comparisons_ch_s2
     }
-
-    // ......
-    // il blocco precedente è uguale per i due casi, si potrebbe modificare l'if
 
     ch_bigwig_input
         .map { meta, bigwig ->
